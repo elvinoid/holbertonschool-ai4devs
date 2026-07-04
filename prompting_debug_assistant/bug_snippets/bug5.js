@@ -6,4 +6,5 @@ for (const item of cart) {
     total += item;
 }
 
+console.log("Items:", cart);
 console.log("Total:", total);
