@@ -31,7 +31,7 @@
 **Notes**: The program mixes incompatible data types, resulting in an incorrect total.
 ---
 ## Bug 6 – bug6.java
-**Language**: Java  
-**Intended Behavior**: Read a JSON string, convert it into an object, and display selected fields.  
-**Issue Type**: Misuse of library/API.  
-**Notes**: The program passes data in an unsupported format to the parsing library.
+**Language**: Java
+**Intended Behavior**: Read a date string, parse it into a `LocalDate` object, and print the parsed date.
+**Issue Type**: Misuse of library/API.
+**Notes**: The program uses the date parsing API with an input format that is not supported by the default parser.
