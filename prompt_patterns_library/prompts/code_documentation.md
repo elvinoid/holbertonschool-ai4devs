@@ -10,4 +10,4 @@
 **Expected Output**:
 - Documented source code
 - Function descriptions
-- Parameter and return value explanationss
+- Parameter and return value explanations
