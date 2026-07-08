@@ -37,3 +37,31 @@ This project demonstrated that AI is a valuable assistant for software specifica
 However, AI should not replace human analysis or decision-making. Specifications define how software will be designed and implemented, making accuracy and consistency essential. Human reviewers are responsible for verifying technical correctness, aligning documentation with business requirements, and ensuring that all project standards are met.
 
 The most effective workflow combines AI's speed with human expertise. AI can generate comprehensive first drafts, while developers, architects, and business analysts refine those drafts into reliable, implementation-ready specifications. This collaborative approach improves both efficiency and documentation quality, making AI a practical tool for modern software engineering rather than a complete replacement for human judgment.
+## Easiest and Hardest Prompt Types
+
+The AI handled structured prompt types most effectively. Tasks such as generating user stories, API endpoint lists, data models, and technical specifications produced consistent and well-organized results because the prompts clearly defined the expected structure. When provided with explicit formatting requirements, the AI generally followed them successfully and produced documentation that required only minor refinement.
+
+The most challenging prompt types were those requiring interpretation or balancing technical accuracy with business context. Product vision statements, feature differentiators, and specification refinements sometimes included assumptions that were reasonable but not explicitly requested. These outputs required additional review to ensure they aligned with the intended product requirements and assignment expectations.
+
+## Effective Prompt Elements
+
+Several prompt elements noticeably improved the quality of AI-generated specifications.
+
+- **Role definition** helped establish the perspective of the response. Prompts such as "Act as a software architect" or "Act as a product manager" resulted in more focused and technically appropriate documentation.
+- **Clear task descriptions** reduced ambiguity by specifying exactly what should be generated.
+- **Input placeholders** such as `[PRODUCT_IDEA]`, `[API_NAME]`, or `[DATA_MODEL]` made the templates reusable and encouraged more consistent responses.
+- **Expected output formatting** ensured that responses followed a predictable structure, making them easier to review and integrate into project documentation.
+
+These elements consistently produced higher-quality results than short or general prompts.
+
+## Influence of Prompt Structure
+
+Prompt structure had a significant impact on the quality of the generated specifications. Highly structured prompts that explicitly requested sections, headings, and formatting produced organized and consistent documentation. In contrast, broader prompts sometimes resulted in missing details, inconsistent terminology, or incomplete API definitions.
+
+Providing step-by-step instructions also improved accuracy by encouraging the AI to address every required component individually. This reduced omissions and minimized the amount of manual editing required after generation.
+
+## Future Improvements
+
+This project demonstrated that prompt quality directly influences documentation quality. In future projects, I would design prompts with clearly defined roles, structured output requirements, and explicit formatting instructions from the beginning. I would also include examples whenever possible to guide the AI toward the desired response format.
+
+Finally, AI-generated specifications should always be reviewed by humans before implementation. Combining carefully designed prompts with manual validation provides the best balance between productivity, consistency, and technical accuracy.
