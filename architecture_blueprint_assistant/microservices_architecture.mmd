@@ -1,0 +1,19 @@
+graph TD
+
+A[Web & Mobile Client] --> B[API Gateway]
+
+B --> C[Authentication Service]
+B --> D[User Service]
+B --> E[Study Management Service]
+B --> F[AI Learning Service]
+B --> G[Assignment Service]
+B --> H[Notification Service]
+B --> I[Analytics Service]
+
+C --> CDB[(Auth Database)]
+D --> DDB[(User Database)]
+E --> EDB[(Study Database)]
+F --> FDB[(AI Database)]
+G --> GDB[(Assignment Database)]
+H --> HDB[(Notification Database)]
+I --> IDB[(Analytics Database)]
