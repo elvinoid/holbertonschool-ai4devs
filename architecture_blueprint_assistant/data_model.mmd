@@ -1,0 +1,46 @@
+erDiagram
+
+    USER ||--o{ STUDY_SESSION : schedules
+    USER ||--o{ STUDY_MATERIAL : uploads
+    USER ||--o{ ASSIGNMENT : submits
+    STUDY_MATERIAL ||--o{ QUIZ : generates
+    ASSIGNMENT }o--|| STUDY_MATERIAL : references
+
+    USER {
+        UUID id
+        string full_name
+        string email
+        string role
+    }
+
+    STUDY_SESSION {
+        UUID id
+        UUID user_id
+        string title
+        datetime start_time
+        datetime end_time
+        string status
+    }
+
+    STUDY_MATERIAL {
+        UUID id
+        UUID user_id
+        string title
+        string subject
+        string file_url
+    }
+
+    ASSIGNMENT {
+        UUID id
+        UUID user_id
+        string title
+        date due_date
+        string status
+    }
+
+    QUIZ {
+        UUID id
+        UUID material_id
+        string title
+        int question_count
+    }
