@@ -37,8 +37,15 @@ paths:
       responses:
         "201":
           description: User registered successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
         "400":
           $ref: '#/components/responses/BadRequest'
+
+        "500":
+          $ref: '#/components/responses/InternalServerError'
 
   /auth/login:
     post:
@@ -61,6 +68,8 @@ paths:
                 $ref: '#/components/schemas/LoginResponse'
         "401":
           $ref: '#/components/responses/Unauthorized'
+        "500":
+          $ref: '#/components/responses/InternalServerError'
 
   /users:
     get:
@@ -90,8 +99,12 @@ paths:
                 items:
                   $ref: '#/components/schemas/User'
 
+        "400":
+          $ref: '#/components/responses/BadRequest'
         "401":
           $ref: '#/components/responses/Unauthorized'
+        "500":
+          $ref: '#/components/responses/InternalServerError'
 
     post:
       tags:
@@ -107,6 +120,17 @@ paths:
       responses:
         "201":
           description: User created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+
+        "400":
+          $ref: '#/components/responses/BadRequest'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
+        "500":    
+          $ref: '#/components/responses/InternalServerError'
 
   /users/{id}:
 
@@ -130,8 +154,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/User'
 
+        "400":
+          $ref: '#/components/responses/BadRequest'
+        "401":
+          $ref: '#/components/responses/Unauthorized'
         "404":
           $ref: '#/components/responses/NotFound'
+        "500":
+          $ref: '#/components/responses/InternalServerError'
 
     put:
       tags:
@@ -485,17 +515,44 @@ components:
 
     BadRequest:
       description: Invalid request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
 
     Unauthorized:
       description: Authentication required
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
 
     NotFound:
       description: Resource not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
 
     InternalServerError:
       description: Internal server error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
 
   schemas:
+
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "Invalid request"
+
+        status:
+          type: integer
+          example: 400
 
     RegisterRequest:
       type: object

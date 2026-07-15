@@ -697,19 +697,47 @@
         "scheme": "bearer",
         "bearerFormat": "JWT"
       }
+    }
+  },
+  "responses": {
+    "BadRequest": {
+      "description": "Invalid request",
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "#/components/schemas/Error"
+          }
+        }
+      }
     },
-    "responses": {
-      "BadRequest": {
-        "description": "Invalid request"
-      },
-      "Unauthorized": {
-        "description": "Authentication required"
-      },
-      "NotFound": {
-        "description": "Resource not found"
-      },
-      "InternalServerError": {
-        "description": "Internal server error"
+    "Unauthorized": {
+      "description": "Authentication required",
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "#/components/schemas/Error"
+          }
+        }
+      }
+    },
+    "NotFound": {
+      "description": "Resource not found",
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "#/components/schemas/Error"
+          }
+        }
+      }
+    },
+    "InternalServerError": {
+      "description": "Internal server error",
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "#/components/schemas/Error"
+          }
+        }
       }
     },
     "schemas": {
