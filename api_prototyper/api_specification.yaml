@@ -187,6 +187,54 @@ components:
           enum:
             - pending
             - completed
+    
+    PaginatedStudySessionResponse:
+      type: object
+      properties:
+        page:
+          type: integer
+        limit:
+          type: integer
+        total:
+          type: integer
+        pages:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/StudySession"
+
+    PaginatedStudyMaterialResponse:
+      type: object
+      properties:
+        page:
+          type: integer
+        limit:
+          type: integer
+        total:
+          type: integer
+        pages:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/StudyMaterial"
+
+    PaginatedAssignmentResponse:
+      type: object
+      properties:
+        page:
+          type: integer
+        limit:
+          type: integer
+        total:
+          type: integer
+        pages:
+          type: integer
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/Assignment"
 
 paths:
 
