@@ -481,7 +481,7 @@ components:
       scheme: bearer
       bearerFormat: JWT
 
-responses:
+  responses:
 
   BadRequest:
     description: Invalid request

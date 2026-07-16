@@ -697,9 +697,8 @@
         "scheme": "bearer",
         "bearerFormat": "JWT"
       }
-    }
-  },
-  "responses": {
+    },
+    "responses": null,
     "BadRequest": {
       "description": "Invalid request",
       "content": {
