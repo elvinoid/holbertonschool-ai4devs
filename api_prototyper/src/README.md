@@ -19,47 +19,23 @@ npm install
 node index.js
 ```
 
-The server will start on:
+The server starts on:
 
-```
 http://localhost:3000
-```
 
-## Available Endpoints
+## Endpoints
 
 | Method | Endpoint | Description |
-|---------|----------|-------------|
+|--------|----------|-------------|
 | GET | / | API status |
-| POST | /users | Create a user |
-| GET | /users | Get all users |
-| GET | /users/:id | Get a user by ID |
-| PUT | /users/:id | Update a user |
-| DELETE | /users/:id | Delete a user |
-
-## Example Request
-
-```http
-POST /users
-Content-Type: application/json
-
-{
-  "name": "John Doe",
-  "email": "john@example.com"
-}
-```
-
-## Example Response
-
-```json
-{
-  "id": 1,
-  "name": "John Doe",
-  "email": "john@example.com"
-}
-```
+| POST | /users | Create user |
+| GET | /users | List users |
+| GET | /users/:id | Get user |
+| PUT | /users/:id | Update user |
+| DELETE | /users/:id | Delete user |
 
 ## Notes
 
 - Data is stored in memory.
-- The data will be lost when the server stops.
-- This project demonstrates basic CRUD operations using Express.js.
+- Data is not persisted after the server stops.
+- Demonstrates basic CRUD operations with Express.js.
