@@ -1,6 +1,6 @@
 # StudySync API
 
-A simple REST API prototype built with Express.js for the StudySync learning platform.
+A minimal REST API prototype built with Express.js for the StudySync learning platform.
 
 ## Requirements
 
@@ -10,36 +10,33 @@ A simple REST API prototype built with Express.js for the StudySync learning pla
 ## Installation
 
 ```bash
-cd src
 npm install
 ```
 
 ## Run the API
 
 ```bash
-npm start
+node index.js
 ```
 
-The server starts on:
+The server will start on:
 
 ```
 http://localhost:3000
 ```
 
-## Endpoints
+## Available Endpoints
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
 | GET | / | API status |
 | POST | /users | Create a user |
-| GET | /users | List all users |
-| GET | /users/:id | Get user by ID |
+| GET | /users | Get all users |
+| GET | /users/:id | Get a user by ID |
 | PUT | /users/:id | Update a user |
 | DELETE | /users/:id | Delete a user |
 
 ## Example Request
-
-Create a user:
 
 ```http
 POST /users
@@ -51,7 +48,7 @@ Content-Type: application/json
 }
 ```
 
-Example response:
+## Example Response
 
 ```json
 {
@@ -63,5 +60,6 @@ Example response:
 
 ## Notes
 
-- Data is stored in memory and is not persisted after the server stops.
-- This project demonstrates basic CRUD functionality using Express.js.
+- Data is stored in memory.
+- The data will be lost when the server stops.
+- This project demonstrates basic CRUD operations using Express.js.
