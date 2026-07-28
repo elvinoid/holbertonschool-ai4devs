@@ -1,18 +1,19 @@
-
----
-
-# Tests
-
-### `tests/README.md`
-
-```markdown
 # Redis Behavior Tests
 
-These are lightweight, runnable pytest tests covering behaviors discussed in the
-legacy-code analysis. They do not require a Redis server because they use small
-models of protocol parsing, command lookup, input buffering, and rehashing.
+This directory contains AI-assisted unit tests for behaviors identified during
+the legacy Redis codebase analysis.
 
-Run:
+## Test Modules
+
+- `test_resp_parser.py` - RESP protocol parsing
+- `test_command_lookup.py` - Redis command lookup
+- `test_rehashing.py` - Incremental hash-table rehashing
+- `test_input_buffer.py` - Input-buffer processing
+- `test_response.py` - RESP bulk-string responses
+
+## Running Tests
+
+Install pytest if necessary:
 
 ```bash
-python -m pytest tests/
+pip install pytest
