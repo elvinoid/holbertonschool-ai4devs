@@ -1,0 +1,25 @@
+languages:
+  javascript:
+    style_guide: "standard"
+    semicolons: true
+    input_validation: true
+    error_handling: explicit
+    api_style: "REST"
+
+workflows:
+  code_review:
+    enabled: true
+    focus_areas:
+      - security
+      - validation
+      - error_handling
+      - performance
+
+  documentation:
+    enabled: true
+    format: "Markdown"
+    include:
+      - endpoints
+      - request_examples
+      - response_examples
+      - errors

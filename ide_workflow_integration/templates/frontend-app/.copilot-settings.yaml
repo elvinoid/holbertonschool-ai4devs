@@ -1,0 +1,27 @@
+languages:
+  javascript:
+    style_guide: "standard"
+    semicolons: true
+    prefer_const: true
+
+  typescript:
+    style_guide: "standard"
+    strict_types: true
+
+workflows:
+  code_review:
+    enabled: true
+    focus_areas:
+      - security
+      - accessibility
+      - performance
+      - maintainability
+
+  documentation:
+    enabled: true
+    format: "Markdown"
+    include:
+      - component_purpose
+      - props
+      - usage_examples
+      - accessibility_notes

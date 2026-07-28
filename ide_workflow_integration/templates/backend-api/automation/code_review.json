@@ -1,0 +1,11 @@
+{
+  "name": "AI Backend Code Review",
+  "type": "ai-workflow",
+  "prompt": "Review this backend API code for security vulnerabilities, input validation, error handling, performance, and REST API best practices.",
+  "focus_areas": [
+    "security",
+    "validation",
+    "error_handling",
+    "performance"
+  ]
+}
