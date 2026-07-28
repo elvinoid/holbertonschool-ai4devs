@@ -1,4 +1,4 @@
-# React App Template and  Backend API Template with AI Support
+# React App Template with AI Support
 
 ## Overview
 
