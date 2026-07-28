@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "AI Code Review",
+      "type": "shell",
+      "command": "gh copilot suggest \"Review ${file} for security, bugs, performance, error handling, and maintainability\"",
+      "problemMatcher": []
+    },
+    {
+      "label": "AI Documentation Generator",
+      "type": "shell",
+      "command": "gh copilot suggest \"Generate Markdown documentation for ${file} including purpose, usage, inputs, outputs, examples, and errors\"",
+      "problemMatcher": []
+    }
+  ]
+}

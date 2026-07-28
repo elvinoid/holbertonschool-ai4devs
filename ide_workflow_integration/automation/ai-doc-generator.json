@@ -1,0 +1,11 @@
+{
+  "label": "AI Documentation Generator",
+  "type": "shell",
+  "command": "gh",
+  "args": [
+    "copilot",
+    "suggest",
+    "Generate clear Markdown documentation for this file, including purpose, usage, inputs, outputs, examples, and errors: ${file}"
+  ],
+  "problemMatcher": []
+}

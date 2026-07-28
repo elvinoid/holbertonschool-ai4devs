@@ -1,0 +1,11 @@
+{
+  "label": "AI Code Review",
+  "type": "shell",
+  "command": "gh",
+  "args": [
+    "copilot",
+    "suggest",
+    "Review this code for security, bugs, performance, error handling, and maintainability: ${file}"
+  ],
+  "problemMatcher": []
+}
