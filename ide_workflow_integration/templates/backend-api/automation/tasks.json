@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "tasks": [
+    {
+      "label": "AI Code Review",
+      "type": "shell",
+      "command": "echo",
+      "args": [
+        "Review the current backend API file for security, validation, error handling, performance, and maintainability issues using GitHub Copilot."
+      ]
+    },
+    {
+      "label": "AI API Documentation",
+      "type": "shell",
+      "command": "echo",
+      "args": [
+        "Generate API documentation for the current backend endpoint, including method, URL, parameters, request body, responses, and errors."
+      ]
+    }
+  ]
+}

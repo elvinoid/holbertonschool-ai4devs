@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "tasks": [
+    {
+      "label": "AI Code Review",
+      "type": "shell",
+      "command": "echo",
+      "args": [
+        "Review the current React file for security, performance, readability, and maintainability issues using GitHub Copilot."
+      ]
+    },
+    {
+      "label": "AI Documentation Generator",
+      "type": "shell",
+      "command": "echo",
+      "args": [
+        "Generate documentation for the current React component, including its purpose, props, state, and usage example."
+      ]
+    }
+  ]
+}
