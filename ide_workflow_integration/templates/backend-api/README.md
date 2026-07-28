@@ -2,50 +2,77 @@
 
 ## Overview
 
-A reusable backend API template designed for AI-assisted development in Visual Studio Code.
+A reusable backend API project template configured for AI-assisted development in Visual Studio Code.
+
+This template is designed for building REST APIs with Node.js and Express.js while using GitHub Copilot to improve development productivity.
 
 ## Features
 
-- REST API project structure
+- Node.js backend structure
+- Express.js REST API support
 - GitHub Copilot support
 - AI-assisted code generation
 - AI code review workflow
-- AI documentation generation
-- API validation and error-handling guidance
-- Security-focused development practices
+- AI documentation generation workflow
+- ESLint recommendations
+- Prettier formatting
+- Input validation
+- Error handling
+- Security and performance considerations
 
 ## AI Configuration
 
-The `.copilot-settings.yaml` file defines backend development rules and AI workflows.
+The `.copilot-settings.yaml` file contains recommended AI coding rules for JavaScript and Express.js development.
 
-The configuration focuses on:
+The configuration includes:
 
-- API security
+- Modern JavaScript syntax
+- `const` and `let` usage
+- ESLint-compatible code
+- Prettier formatting
 - Input validation
-- Error handling
-- Code readability
-- Performance
-- Maintainability
+- Explicit error handling
+- REST API best practices
+- Security considerations
+- Performance considerations
 
 ## Automation
 
-The `automation/tasks.json` file provides:
+The `automation/tasks.json` file provides AI-assisted workflows for:
 
-1. AI Code Review
-2. AI API Documentation Generation
+### AI Code Review
+
+Reviews backend code for:
+
+- Security issues
+- Input validation
+- Error handling
+- Performance
+- Maintainability
+
+### AI API Documentation
+
+Generates API documentation including:
+
+- API endpoints
+- HTTP methods
+- Request parameters
+- Request bodies
+- Responses
+- Error responses
 
 ## Recommended VS Code Extensions
 
 - GitHub Copilot
 - GitHub Copilot Chat
 - ESLint
-- Prettier
+- Prettier - Code formatter
 
-## Usage
+## Setup
 
-Copy this template when starting a new backend API project.
+Install Node.js 18 or later.
 
-Install dependencies:
+Install project dependencies:
 
 ```bash
 npm install

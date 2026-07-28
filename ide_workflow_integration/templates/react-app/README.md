@@ -1,51 +1,32 @@
-# React App Template with AI Support
+# AI-Ready Project Templates
 
-## Overview
+This directory contains reusable AI-ready project templates for frontend and backend development.
 
-A reusable React project template configured for AI-assisted development in Visual Studio Code.
+## Template 1 - React App
 
-## Features
+A reusable frontend template for React applications.
+
+### Features
 
 - React frontend structure
 - GitHub Copilot support
 - AI-assisted code generation
+- ESLint and Prettier
 - AI code review workflow
 - AI documentation generation workflow
-- ESLint and Prettier recommendations
-- Reusable project configuration
 
-## AI Configuration
+### AI Configuration
 
-The `.copilot-settings.yaml` file defines recommended JavaScript and React coding practices.
+The React template includes `.copilot-settings.yaml` with JavaScript and React coding rules.
 
-Rules include:
+### Automation
 
-- Use modern JavaScript syntax
-- Prefer functional React components
-- Use ESLint-compatible code
-- Use clear and descriptive variable names
-- Add comments for complex logic
-- Consider security and performance during code review
+The React template includes:
 
-## Automation
+- AI Code Review
+- AI Documentation Generation
 
-The `automation/tasks.json` file provides automation workflows for:
+Location:
 
-1. AI Code Review
-2. AI Documentation Generation
-
-## Recommended VS Code Extensions
-
-- GitHub Copilot
-- GitHub Copilot Chat
-- ESLint
-- Prettier - Code formatter
-
-## Usage
-
-Copy this template when starting a new React project.
-
-Install project dependencies:
-
-```bash
-npm install
+```text
+ide_workflow_integration/templates/react-app/
