@@ -4,20 +4,22 @@
 
 Parse application logs and calculate:
 
-- Total log entries
-- Count of each log level
-- Keyword matches
-- Repeated log sources
+- Total number of valid log entries
+- Number of entries for each log level
+- Number of keyword matches
+- Sources that appear repeatedly
 
-The algorithm should produce the same logical results regardless of the programming language used.
+The algorithm must produce equivalent results when implemented in different programming languages.
 
-## Inputs
+## Input Format
 
-- List of log entries
-- List of keywords to search for
-- Repetition threshold
+The algorithm accepts:
 
-Example log format:
+- `logs`: A list of log entries
+- `keywords`: A list of keywords
+- `threshold`: Minimum number of occurrences required for a source to be considered repeated
+
+Each log entry follows this format:
 
 ```text
-2026-07-30 10:15:20 | ERROR | auth-service | Failed login attempt
+YYYY-MM-DD HH:MM:SS | LEVEL | SOURCE | MESSAGE
