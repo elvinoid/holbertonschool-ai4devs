@@ -1,5 +1,5 @@
 class LogAnalyzer:
-    """Analyze application logs."""
+    """Reference implementation for the cross-language log analyzer."""
 
     VALID_LEVELS = {
         "DEBUG",
@@ -10,11 +10,7 @@ class LogAnalyzer:
     }
 
     def parse_line(self, line: str) -> dict:
-        """Parse one log line.
-
-        Expected format:
-        YYYY-MM-DD HH:MM:SS | LEVEL | SOURCE | MESSAGE
-        """
+        """Parse a single log entry."""
         parts = [part.strip() for part in line.split("|", 3)]
 
         if len(parts) != 4:
@@ -44,7 +40,8 @@ class LogAnalyzer:
         keywords: list[str] | None = None,
         threshold: int = 2,
     ) -> dict:
-        """Analyze valid log entries."""
+        """Analyze logs and return statistics."""
+
         if keywords is None:
             keywords = []
 
@@ -52,18 +49,23 @@ class LogAnalyzer:
             raise ValueError("Threshold must be at least 1")
 
         level_counts = {}
-        keyword_matches = {
-            keyword.lower(): 0
-            for keyword in keywords
-            if keyword.strip()
-        }
+        keyword_matches = {}
         source_counts = {}
+
+        # Normalize keywords once.
+        for keyword in keywords:
+            keyword = keyword.strip().lower()
+
+            if keyword:
+                keyword_matches.setdefault(keyword, 0)
+
         total_entries = 0
 
         for line in logs:
             try:
                 entry = self.parse_line(line)
             except ValueError:
+                # Invalid entries are ignored.
                 continue
 
             total_entries += 1
