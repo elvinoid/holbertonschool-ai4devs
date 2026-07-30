@@ -1,4 +1,8 @@
 function findUser(users, username) {
+    if (!users || !username) {
+        return null;
+    }
+
     for (let i = 0; i <= users.length; i++) {
         if (users[i].username === username) {
             return users[i];

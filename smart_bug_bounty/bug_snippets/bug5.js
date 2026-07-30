@@ -1,12 +1,16 @@
-function calculateTotal(items, discount) {
+function calculateTotal(items, discountPercent) {
+    if (!Array.isArray(items)) {
+        return 0;
+    }
+
     let total = 0;
 
     for (const item of items) {
         total += item.price * item.quantity;
     }
 
-    if (discount) {
-        total = total - discount;
+    if (discountPercent > 0) {
+        total = total - discountPercent;
     }
 
     return total;

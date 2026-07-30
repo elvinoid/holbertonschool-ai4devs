@@ -1,12 +1,14 @@
 public class Bug3 {
 
     public static int countErrors(String[] logs) {
+        if (logs == null) {
+            return 0;
+        }
+
         int errors = 0;
 
         for (String log : logs) {
-            if (log.contains("ERROR")) {
-                errors++;
-            } else if (log.contains("error")) {
+            if (log != null && log.contains("ERROR")) {
                 errors++;
             }
         }

@@ -1,5 +1,5 @@
 def calculate_average(numbers):
-    """Return the average of a list of numbers."""
+    """Calculate the average of numbers."""
     if not numbers:
         return 0
 
@@ -11,8 +11,9 @@ def calculate_average(numbers):
 
 
 def main():
-    values = [10, 20, 30]
-    print(calculate_average(values))
+    values = [10, 20, 30, 40]
+    average = calculate_average(values)
+    print("Average:", average)
 
 
 if __name__ == "__main__":

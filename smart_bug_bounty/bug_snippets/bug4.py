@@ -1,5 +1,8 @@
 def get_user_role(user):
-    """Return the user's role or 'guest' if missing."""
+    """Return the user's role."""
+    if user is None:
+        return "guest"
+
     role = user.get("role")
 
     if role:
@@ -11,15 +14,16 @@ def get_user_role(user):
 def can_delete(user):
     role = get_user_role(user)
 
-    if role == "admin":
-        return True
-
-    return False
+    return role == "admin"
 
 
 def main():
     user = {"name": "Alice"}
-    print(can_delete(user))
+
+    if can_delete(user):
+        print("User can delete records")
+    else:
+        print("Access denied")
 
 
 if __name__ == "__main__":
