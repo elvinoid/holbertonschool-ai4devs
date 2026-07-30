@@ -1,80 +1,96 @@
-# Cross-Language Specification - Log Analyzer
+# Cross-Language Specification - Student Grade Analyzer
 
 ## Algorithm
+Parse a list of student records and compute:
+- Total number of students
+- Class average score
+- Highest and lowest scores
+- Grade distribution (A, B, C, D, F)
+- List of students who failed (score below 50)
 
-Parse application logs and calculate total entries, log-level counts, keyword matches, and repeated sources.
+## Inputs
+A list of student records in JSON format, where each record contains:
+- name (string): the student full name
+- score (integer): the student numeric score between 0 and 100
 
-## Input Format
+Example input:
+[
+  {"name": "Alice", "score": 92},
+  {"name": "Bob", "score": 45},
+  {"name": "Carol", "score": 78}
+]
 
-Input contains:
-- `logs`: list of log strings
-- `keywords`: list of search keywords
-- `threshold`: minimum source occurrence count
+## Outputs
+A JSON object containing:
+- total_students (integer): total number of students processed
+- average_score (float): arithmetic mean of all scores rounded to 2 decimal places
+- highest_score (integer): maximum score in the dataset
+- lowest_score (integer): minimum score in the dataset
+- grade_distribution (object): count of students per grade (A, B, C, D, F)
+- failed_students (list): names of students who scored below 50
 
-Log format:
-`YYYY-MM-DD HH:MM:SS | LEVEL | SOURCE | MESSAGE`
-
-Example:
-`2026-07-30 10:15:20 | ERROR | auth | Failed login`
-
-## Output Format
-
-Return:
-- `total_entries`: number of valid entries
-- `level_counts`: count for each log level
-- `keyword_matches`: count for each keyword
-- `repeated_sources`: sources occurring at least `threshold` times
-
-Example:
-`{"total_entries": 2, "level_counts": {"ERROR": 2}, "keyword_matches": {"failed": 2}, "repeated_sources": ["auth"]}`
+## Grade Scale
+- A: 90 to 100
+- B: 75 to 89
+- C: 60 to 74
+- D: 50 to 59
+- F: below 50
 
 ## Edge Cases
-
-- Empty logs
-- Empty keywords
-- Malformed entries
-- Unknown log levels
-- Duplicate entries
-- Multiple keywords
-- Case-insensitive keywords
-- Threshold of 1
-- Threshold larger than log count
-
-Malformed entries must be skipped without stopping the analysis.
+- Empty input list: return zeros and empty lists for all fields
+- Single student: average equals that student score
+- All students failing: failed_students contains all names
+- All students with perfect score: average is 100.0, all grades are A
+- Score of exactly 50: classified as D, not F
 
 ## Test Cases
 
-### Test 1 - Normal
-Input: 3 valid logs, 2 ERROR and 1 INFO.
-Expected: `total_entries = 3`, `ERROR = 2`, `INFO = 1`.
+### Test Case 1 - Normal mixed input
+Input: Alice=92, Bob=45, Carol=78, David=55, Eve=88
+Expected Output:
+- total_students: 5
+- average_score: 71.60
+- highest_score: 92
+- lowest_score: 45
+- grade_distribution: A=1, B=2, C=0, D=1, F=1
+- failed_students: [Bob]
 
-### Test 2 - Empty
-Input: `logs = []`.
-Expected: `total_entries = 0`.
+### Test Case 2 - Empty input
+Input: []
+Expected Output:
+- total_students: 0
+- average_score: 0.00
+- highest_score: 0
+- lowest_score: 0
+- grade_distribution: A=0, B=0, C=0, D=0, F=0
+- failed_students: []
 
-### Test 3 - Keyword
-Input: 2 logs containing `Failed`, keyword = `failed`.
-Expected: `failed = 2`.
+### Test Case 3 - Single student passing
+Input: Alice=85
+Expected Output:
+- total_students: 1
+- average_score: 85.00
+- highest_score: 85
+- lowest_score: 85
+- grade_distribution: A=0, B=1, C=0, D=0, F=0
+- failed_students: []
 
-### Test 4 - Malformed
-Input: 1 valid log and 1 malformed log.
-Expected: `total_entries = 1`, malformed log skipped.
+### Test Case 4 - All students failing
+Input: Alice=30, Bob=20, Carol=45
+Expected Output:
+- total_students: 3
+- average_score: 31.67
+- highest_score: 45
+- lowest_score: 20
+- grade_distribution: A=0, B=0, C=0, D=0, F=3
+- failed_students: [Alice, Bob, Carol]
 
-### Test 5 - Repeated Source
-Input: 3 logs from `auth`, threshold = 2.
-Expected: `repeated_sources = ["auth"]`.
-
-### Test 6 - Multiple Keywords
-Input: message contains `failed` and `timeout`.
-Expected: both keywords have count `1`.
-
-## Cross-Language Requirements
-
-Python, JavaScript, Java, C++, and other implementations must produce equivalent results for identical inputs.
-
-Required behavior:
-- Same input format
-- Same output format
-- Case-insensitive keyword matching
-- Malformed entries skipped
-- Same threshold behavior
+### Test Case 5 - Boundary score of exactly 50
+Input: Alice=50, Bob=89, Carol=90
+Expected Output:
+- total_students: 3
+- average_score: 76.33
+- highest_score: 90
+- lowest_score: 50
+- grade_distribution: A=1, B=1, C=0, D=1, F=0
+- failed_students: []
